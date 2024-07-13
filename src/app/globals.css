@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ------light-theme----- */
+:root[class='dark'] {
+  --color-text-primary: #393839;
+  --color-text-secondary: #bcbec4;
+  --color-background-primary: #fcfcfc;
+  --color-background-secondary: #f5f5f5;
+  --color-background-active: #efefef;
+  --color-accent-1: #b5e5ca;
+  --color-accent-2: #ffbc9a;
+  --color-accent-3: #cabdff;
+  --color-accent-4: #ffd88d;
+  --color-accent-5: #2a85ff;
+}
+
+:root {
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #8e8e8e;
+  --color-background-primary: #1a1c1e;
+  --color-background-secondary: #111315;
+  --color-background-active: #272c31;
+  --color-accent-1: #b5e5ca;
+  --color-accent-2: #ffbc9a;
+  --color-accent-3: #cabdff;
+  --color-accent-4: #ffd88d;
+  --color-accent-5: #2a85ff;
+  /* --color-accent-1: #4CAF50; */
+  /* --color-accent-2: #FF9800; */
+  /* --color-accent-3: #2196F3; */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+/* 
+body {
+  font-family: 'Poppins', sans-serif;
+} */
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* ------common-scroll-style------- */
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: .313em;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Adjust scrollbar width and height */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  margin-right: 20px;
+  /* Adjust margin-right as needed */
+}
