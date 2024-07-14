@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { CiTwitter } from "react-icons/ci";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
