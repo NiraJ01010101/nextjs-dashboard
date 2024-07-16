@@ -1,24 +1,28 @@
 "use client";
-
-import { MdElectricBolt, MdSunny } from "react-icons/md";
+import { useEffect, useState } from "react";
 import { links } from "../../data/sidebarLink";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { MdElectricBolt, MdSunny } from "react-icons/md";
 import { FaRegCircleQuestion } from "react-icons/fa6";
-import { useState } from "react";
 import { FaMoon } from "react-icons/fa";
 
 function SideBar({ isCollapsed, setIsCollapsed }: any) {
   const pathname = usePathname();
   const [isDarkMode, setIsDarkMode] = useState(true);
 
-  const toggleDarkMode = (e: any) => {
-    setIsDarkMode(e.target.checked);
-    if (e.target.checked) {
+  useEffect(() => {
+    if (isDarkMode) {
       document.documentElement.classList.remove("dark");
+      document.documentElement.classList.add("light");
     } else {
+      document.documentElement.classList.remove("light");
       document.documentElement.classList.add("dark");
     }
+  }, [isDarkMode]);
+
+  const toggleDarkMode = (e: any) => {
+    setIsDarkMode(e.target.checked);
   };
 
   return (
@@ -77,8 +81,8 @@ function SideBar({ isCollapsed, setIsCollapsed }: any) {
               <div
                 key={item.title}
                 className={`transition-all duration-500 mx-4 my-2 ${pathname === `/${item.links[0].name}`
-                    ? "text-textPrimary bg-backgroundActive shadow-md rounded-md p-2"
-                    : "text-textPrimary opacity-50 p-2"
+                  ? "text-textPrimary bg-backgroundActive shadow-md rounded-md p-2"
+                  : "text-textPrimary opacity-50 p-2"
                   }`}
               >
                 {item.links.map((link) => (
@@ -91,7 +95,7 @@ function SideBar({ isCollapsed, setIsCollapsed }: any) {
                     <i className="text-2xl">{link.icon}</i>
                     {isCollapsed && (
                       <span className="capitalize font-medium">
-                        {link.name}
+                        {item.title}
                       </span>
                     )}
                   </Link>

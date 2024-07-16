@@ -42,11 +42,11 @@ function Comments() {
           Comments
         </h2>
         {comments &&
-          comments.map((comment) => {
+          comments.map((comment, i) => {
             const { image, author, username, project, message, time } = comment;
             return (
-              <>
-                <div className="flex flex-row gap-4 mt-5">
+              <div key={i}>
+                <div className="flex flex-row gap-4 mt-5" key={i}>
                   <div className="basis-full md:basis-1/6">
                     <div className="rounded-[50%] overflow-hidden h-12 w-12 drop-shadow-md">
                       <Image
@@ -84,7 +84,7 @@ function Comments() {
                   </div>
                 </div>
                 <div className="border-t border-textSecondary border-opacity-50 my-4"></div>
-              </>
+              </div>
             );
           })}
 

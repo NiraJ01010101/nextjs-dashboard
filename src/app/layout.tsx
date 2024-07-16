@@ -12,11 +12,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const [isCollapsed, setIsCollapsed] = useState(true);
+
   return (
     <html lang="en">
-      <body
-        className={`min-h-screen w-full text-textPrimary bg-backgroundPrimary flex ${poppins.className}`}
-      >
+      <body className={`min-h-screen w-full text-textPrimary bg-backgroundPrimary flex ${poppins.className}`}>
         <div
           className={`transition-all duration-700 ${
             isCollapsed ? "w-1/6" : "w-[5%]"

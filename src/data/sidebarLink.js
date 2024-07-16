@@ -9,7 +9,7 @@ export const links = [
     title: "Home",
     links: [
       {
-        name: "home",
+        name: "",
         icon: <IoHomeOutline />,
       },
     ],

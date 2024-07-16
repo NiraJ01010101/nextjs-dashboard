@@ -33,16 +33,15 @@ function SocialLinks() {
         </p>
         <div className="flex justify-center items-center gap-5 md:mt-5 mt-2">
           {socialLinks &&
-            socialLinks?.map((links) => (
-              <>
-                <button
-                  type="button"
-                  className="w-full text-center border border-textSecondary p-3 rounded-xl flex justify-center items-center gap-3"
-                >
-                  <span>{links.icon}</span>
-                  {links.label}
-                </button>
-              </>
+            socialLinks?.map((links, i) => (
+              <button
+                key={i}
+                type="button"
+                className="w-full text-center border border-textSecondary p-3 rounded-xl flex justify-center items-center gap-3"
+              >
+                <span>{links.icon}</span>
+                {links.label}
+              </button>
             ))}
         </div>
       </div>

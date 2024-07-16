@@ -7,4 +7,3 @@ export { default as ProductViews } from "../components/ProductViews";
 export { default as ProTips } from "../components/ProTips";
 export { default as SocialLinks } from "../components/SocialLinks";
 export { default as RefundRequest } from "../components/RefundRequest";
-export { default as BarApexChart } from "../components/comman/BarApexChart";

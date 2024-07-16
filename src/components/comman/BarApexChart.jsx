@@ -1,6 +1,8 @@
-"use client";
+import dynamic from "next/dynamic";
 import React from "react";
-import ReactApexChart from "react-apexcharts";
+const ReactApexChart = dynamic(() => import("react-apexcharts"), {
+  ssr: false,
+});
 
 const BarApexChart = () => {
   const series = [
@@ -79,7 +81,8 @@ const BarApexChart = () => {
         options={options}
         series={series}
         type="bar"
-        height={350}
+        height="350"
+        width="100%"
       />
     </div>
   );

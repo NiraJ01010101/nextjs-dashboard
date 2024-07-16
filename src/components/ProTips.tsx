@@ -76,39 +76,37 @@ function ProTips() {
         </p>
         <div className="proTips-Card flex flex-wrap items-center mt-5 gap-y-4">
           {proTips &&
-            proTips?.map((tips) => {
+            proTips?.map((tips, index) => {
               const { image, title, label, labelBg, icon, readTime } = tips;
               return (
-                <>
-                  <div className="w-full md:w-1/2 flex items-center gap-4">
-                    <div className="p-4 flex items-center justify-center rounded-[50%] border border-textSecondary">
-                      {icon}
-                    </div>
-                    <div className="w-4/5">
-                      <p className="font-semibold">{title}</p>
-                      <p className="flex justify-start items-center gap-2">
-                        {label && (
-                          <span
-                            className={`bg-${labelBg} rounded-md p-1 text-xs text-black`}
-                          >
-                            {label}
-                          </span>
-                        )}
-                        <div className="border border-textSecondary rounded-md flex items-center justify-center text-xs">
-                          <div className="overflow-hidden h-6 rounded-sm">
-                            <Image
-                              alt="image.com"
-                              src="https://images.unsplash.com/photo-1529758146491-1e11fd721f77?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                              width={20}
-                              height={20}
-                            />
-                          </div>
-                          <span className="px-2">{readTime}</span>
+                <div className="w-full md:w-1/2 flex items-center gap-4" key={index}>
+                  <div className="p-4 flex items-center justify-center rounded-[50%] border border-textSecondary">
+                    {icon}
+                  </div>
+                  <div className="w-4/5">
+                    <p className="font-semibold">{title}</p>
+                    <div className="flex justify-start items-center gap-2">
+                      {label && (
+                        <span
+                          className={`bg-${labelBg} rounded-md p-1 text-xs text-black`}
+                        >
+                          {label}
+                        </span>
+                      )}
+                      <div className="border border-textSecondary rounded-md flex items-center justify-center text-xs">
+                        <div className="overflow-hidden h-6 rounded-sm">
+                          <Image
+                            alt="image.com"
+                            src="https://images.unsplash.com/photo-1529758146491-1e11fd721f77?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            width={20}
+                            height={20}
+                          />
                         </div>
-                      </p>
+                        <span className="px-2">{readTime}</span>
+                      </div>
                     </div>
                   </div>
-                </>
+                </div>
               );
             })}
         </div>
